@@ -35,9 +35,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          name: ghcr.io/${{ env.REPO }}
+          tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
           file: ./Dockerfile
-          tag: ${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
